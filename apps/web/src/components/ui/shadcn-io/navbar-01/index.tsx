@@ -78,7 +78,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
       className,
       navigationLinks = defaultNavigationLinks,
       ctaText = 'Sign In',
-      ctaHref = '#get-started',
+      ctaHref = '/login',
       onSignInClick,
       onCtaClick,
       ...props

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar01 } from '@/components/ui/shadcn-io/navbar-01';
 import { Inter } from 'next/font/google'
+import {
+  ClerkProvider
+} from '@clerk/nextjs'
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ['latin'] })
@@ -17,11 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className + " min-h-screen bg-gray-100"}>
-        <Navbar01 className="bg-gray-100" />
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className + " min-h-screen bg-gray-100"}>
+          <Navbar01 ctaHref={"/login"} className="bg-gray-100" />
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
