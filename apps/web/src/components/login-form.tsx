@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { SignIn } from '@clerk/nextjs'
+import { SignInButton } from '@clerk/nextjs'
 
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -50,8 +50,11 @@ export function LoginForm({
                 <Input id="password" type="password" required />
               </div>
               <div className="flex flex-col gap-3">
-                import {SignIn} from '@clerk/nextjs'
-
+                <SignInButton >
+                  <Button variant="outline" className="w-full">
+                    Login
+                  </Button>
+                </SignInButton>
                 <Button variant="outline" className="w-full">
                   Login with Google
                 </Button>
